@@ -227,15 +227,11 @@ h3 {
 #social-icons {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    column-gap: 5px;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 1000px;
-    height: auto;
-    position: absolute;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: 20px;
+    position: relative;
+    top: 200px;
     z-index: 10;
 }
 
