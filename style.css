@@ -33,6 +33,12 @@ h1 {
     font-size: 86pt
 }
 
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 30pt
+}
+
 h3 {
     color: transparent;
     padding-top: 20px;
