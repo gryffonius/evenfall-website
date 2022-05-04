@@ -57,7 +57,7 @@ h3 {
     }
 }
 
-.domeset {
+.moon-dome {
     width: 600px;
     height: 600px;
     border-radius: 100%;
@@ -74,6 +74,7 @@ h3 {
     overflow: auto;
     animation: domeset 7s ease-in-out 500ms 1 forwards running;
     transform: scale(40%);
+    z-index: 0;
 }
 
 @keyframes domeset {
@@ -94,6 +95,27 @@ h3 {
     }
 }
 
+#moon {
+    width: 100%;
+    position: relative;
+    bottom: 500px;
+    transform: scale(110%);
+    opacity: 100%;
+    animation: moonfade 7s ease-in-out 500ms 1 forwards running;
+}
+
+@keyframes moonfade {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
 .door {
     width: 100px;
     height: 280px;
@@ -105,6 +127,7 @@ h3 {
     background-color: transparent;
     position: relative;
     animation: doorappear 1s ease-in-out 6s 1 forwards running;
+    z-index: 10;
 }
 
 @keyframes doorappear {
