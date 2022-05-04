@@ -10,20 +10,28 @@
     </head>
     <body>
         <!-- <img src="./images/stars.png" alt="stars" id="stars"> -->
-        <img src="./images/farmhouse-silhouette.png" alt="farmhouse" id="farmhouse">
-        <img src="./images/windmill-base.png" alt="windmill-base" id="windmill-base">
-        <img src="./images/windmill-wheel.png" alt="windmill-wheel" id="windmill-wheel">
+        <img src="./images/farmhouse-silhouette.png" alt="farmhouse" id="farmhouse" style="cursor: pointer">
         <img src="./images/window.png" alt="window" id="window">
+        <img src="./images/windmill-base.png" alt="windmill-base" id="windmill-base" class="windmill" style="cursor: pointer">
+        <img src="./images/windmill-wheel.png" alt="windmill-wheel" id="windmill-wheel" class="windmill" style="cursor: pointer">
 
         <div class="sky">
             <div class="moon-dome">
-                
+                <!-- geodesic dome svg-->
+                <svg id="dome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1493.52 1492.73" width="500px" height="500px" fill="currentColor" stroke="currentColor" style="cursor: pointer">
+                    <polygon points="5.22 885.3 14.22 573.3 146.22 292.3 382.22 88.3 679.22 5.3 985.22 47.3 1253.22 207.3 1427.22 455.3 1488.03 755.17 1414.22 1064.3 1229.22 1315.3 951.22 1463.3 641.22 1487.3 344.22 1381.3 121.22 1170.3 5.22 885.3"/>
+                    <polygon points="382.22 88.3 308.22 202.3 146.22 292.3 104.22 461.3 14.22 573.3 24.78 725.8 5.22 885.3 89.22 992.3 121.22 1170.3 276.22 1260.3 344.22 1381.3 501.22 1421.3 641.22 1487.3 775.22 1436.3 951.22 1463.3 1089.22 1342.3 1229.22 1315.3 1310.22 1170.3 1414.22 1064.3 1414.22 918.55 1488.03 755.17 1414.22 591.3 1427.22 455.3 1325.22 334.3 1253.22 207.3 1117.22 156.3 985.22 47.3 807.45 47.3 679.22 5.3 535.22 60.3 382.22 88.3"/>
+                    <polygon points="308.22 202.3 104.22 461.3 24.78 725.8 89.22 992.3 276.22 1260.3 501.22 1421.3 775.22 1436.3 1089.22 1342.3 1310.22 1170.3 1414.22 918.55 1414.22 591.3 1325.22 334.3 1117.22 156.3 807.45 47.3 535.22 60.3 308.22 202.3"/>
+                    <polygon points="308.22 202.3 325.22 427.3 104.22 461.3 157.12 725.8 24.78 725.8 157.12 725.8 89.22 992.3 306.22 1039.3 276.22 1260.3 544.22 1289.3 501.22 1421.3 544.22 1289.3 775.22 1436.3 890.22 1242.3 1089.22 1342.3 1204.22 1092.3 1310.22 1170.3 1204.22 1092.3 1414.22 918.55 1259.28 746.3 1414.22 591.3 1216.22 410.3 1325.22 334.3 1216.22 410.3 1117.22 156.3 911.22 245.3 807.45 47.3 573.22 181.3 535.22 60.3 573.22 181.3 308.22 202.3"/>
+                    <polygon points="325.22 427.3 157.12 725.8 306.22 1039.3 544.22 1289.3 890.22 1242.3 1204.22 1092.3 1259.28 746.3 1216.22 410.3 911.22 245.3 573.22 181.3 325.22 427.3"/>
+                    <polyline points="573.22 181.3 654.22 442.3 325.22 427.3 435.02 725.8 157.12 725.8 435.02 725.8 306.22 1039.3 637.22 1024.3 544.22 1289.3 637.22 1024.3 890.22 1242.3 983.22 922.3 1204.22 1092.3 983.22 922.3 1259.28 746.3 987.22 561.3 1216.22 410.3 987.22 561.3 911.22 245.3 654.22 442.3 435.02 725.8 637.22 1024.3 983.22 922.3 987.22 561.3 654.22 442.3 737.5 735.3 435.02 725.8 737.5 735.3 637.22 1024.3 737.5 735.3 983.22 922.3 737.5 735.3 987.22 561.3"/>
+                </svg>
+                <img src="./images/moon.png" alt="moon" id="moon">
                 <h3 class="textchange">Welcome to</h3>
                 <h1 class="textchange">Evenfall</h1>
-                <div class="door">
-                    <div class="doorknob"></div>
+                <div id="door">
+                    <div id="doorknob"></div>
                 </div>
-                <img src="./images/moon.png" alt="moon" id="moon">
             </div>
         </div>
         <div class="footer">
@@ -32,15 +40,15 @@
                 <h4>Follow us!</h4>
             </div>
             <div id="social-icons">
-                <!-- instagram icon -->
+                <!-- instagram icon svg-->
                 <svg class="icon" onclick="window.open('https://www.instagram.com/glampevenfall/','mywindow');" style="cursor: pointer" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="100px" height="100px">
                     <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"/>
                 </svg>
-                <!-- youtube icon -->
+                <!-- youtube icon svg-->
                 <svg class="icon" onclick="window.open('https://www.youtube.com/channel/UCXI1zMbQ-nebasxPynrN-5Q','mywindow');" style="cursor: pointer" fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="100" height="100px">
                     <path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"/>
                 </svg>
-                <!-- facebook icon -->
+                <!-- facebook icon svg-->
                 <svg class="icon" onclick="window.open('https://www.facebook.com/glampevenfall/','mywindow');" style="cursor: pointer" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="100px" height="100px">
                     <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"/>
                 </svg>

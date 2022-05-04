@@ -70,8 +70,8 @@ h4 {
 .moon-dome {
     width: 600px;
     height: 600px;
-    border-radius: 100%;
-    background-color: #90c0df;
+    /* border-radius: 100%; */
+    /* background-color: #90c0df; */
     position: fixed;
     left: 0;
     right: -400px;
@@ -89,28 +89,29 @@ h4 {
 
 @keyframes domeset {
     0% {
-        right: -400px;
+        right: -500px;
         top: -600px;
-        transform: scale(40%);
-        background-color: #90c0df;
+        transform: scale(30%);
+        /* background-color: #90c0df; */
     }
     60% {
-        background-color: #90c0df;
+        /* background-color: #90c0df; */
     }
     100% {
         right: 0px;
         top: 0;
         transform: scale(100%);
-        background-color: rgb(255, 255, 255);
+        /* background-color: rgb(255, 255, 255); */
     }
 }
 
 #moon {
-    width: 100%;
-    position: relative;
-    bottom: 500px;
-    transform: scale(110%);
+    width: 500px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
     opacity: 100%;
+    pointer-events: none;
     animation: moonfade 7s ease-in-out 500ms 1 forwards running;
 }
 
@@ -118,38 +119,53 @@ h4 {
     0% {
         opacity: 100%;
     }
-    50% {
-        opacity: 0%;
+    40% {
+        opacity: 100%;
     }
     100% {
         opacity: 0%;
     }
 }
 
-.door {
+#dome {
+    transform: scale(98%);
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    fill: rgb(3, 23, 89);
+    stroke-width: 5px;
+    stroke: rgb(12, 44, 149);
+    transition: stroke 1s ease-in-out, filter 1s ease-in-out;
+}
+
+#dome:hover {
+    stroke:rgb(255, 242, 0);
+    filter: drop-shadow(3px 3px 10px rgb(255, 242, 0))
+    drop-shadow(3px -3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
+}
+
+#door {
     width: 100px;
     height: 280px;
+    position: absolute;
     left: 0;
     right: 0;
-    top: 0;
+    top: 120px;
     bottom: 0;
     margin: auto;
-    background-color: transparent;
-    position: relative;
+    background-color: rgb(6, 6, 103);
+    border: rgb(12, 44, 149);
+    border-style: solid;
+    border-width: 3px;
+    pointer-events: none;
+    opacity: 0%;
     animation: doorappear 1s ease-in-out 6s 1 forwards running;
     z-index: 10;
 }
 
-@keyframes doorappear {
-    0% {
-        background-color: transparent;
-    } 
-    100% {
-        background-color: rgb(6, 6, 103);
-    }
-}
-
-.doorknob {
+#doorknob {
     width: 10px;
     height: 10px;
     border-radius: 100%;
@@ -158,18 +174,20 @@ h4 {
     top: 90px;
     bottom: 0;
     margin: auto;
-    background-color: transparent;
+    background-color: purple;
     position: relative;
-    animation: knobappear 1s ease-in-out 6s 1 forwards running;
+    opacity: 0%;
+    pointer-events: none;
+    animation: doorappear 1s ease-in-out 6s 1 forwards running;
+    z-index: 11;
 }
 
-
-@keyframes knobappear {
+@keyframes doorappear {
     0% {
-        background-color: transparent;
+        opacity: 0%;
     } 
     100% {
-        background-color: rgb(196, 2, 255);
+        opacity: 100%;
     }
 }
 
@@ -181,7 +199,6 @@ h4 {
     height: 400px;
     background-color: rgb(0, 0, 0);
     margin-top: auto;
-
 }
 
 #farmhouse {
@@ -192,6 +209,25 @@ h4 {
     right: 0;
     top: auto;
     bottom: 398px;
+    transition: filter 1s ease-in-out;
+}
+
+#farmhouse:hover {
+    filter: drop-shadow(3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(3px -3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
+}
+
+#windmill-base, #windmill-wheel {
+    transition: filter 1s ease-in-out;
+}
+
+.windmill:hover {
+    filter: drop-shadow(3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(3px -3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
 }
 
 #windmill-base {
@@ -233,7 +269,8 @@ h4 {
     top: auto;
     bottom: 450px;
     animation: glow 4s linear 5s infinite alternate none running;
-    opacity: 0%
+    opacity: 0%;
+    pointer-events: none;
 }
 
 @keyframes glow {
@@ -273,6 +310,7 @@ h4 {
 
 .icon {
     fill: rgb(86, 86, 86);
+    transition: fill 500ms ease-in-out;
 }
 
 .icon:hover {
