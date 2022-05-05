@@ -232,7 +232,7 @@ body {
     top: auto;
     bottom: 398px;
     transition: filter 1s ease-in-out;
-    z-index: 9;
+    z-index: 8;
 }
 
 /* #farmhouse:hover {
@@ -253,34 +253,34 @@ body {
     animation: glow 4s linear 5s infinite alternate none running;
     opacity: 0%;
     pointer-events: none;
-    z-index: 10;
+    z-index: 9;
 }
 
 #about-us-txt {
     font-size: 45pt;
     color:rgb(12, 44, 149);
-    position: absolute;
+    position: fixed;
     left: 130px;
     right: auto;
-    top: 600px;
-    bottom: auto;
+    top: auto;
+    bottom: 300px;
     line-height: 0%;
     transition: filter 500ms ease-in-out;
     animation: about-txt-move 3s ease-in-out 6s 1 forwards running;
-    z-index: 8;
+    z-index: 10;
 }
 
 @keyframes about-txt-move {
     0% {
         color:rgb(12, 44, 149);
-        top: 600px;
+        bottom: 300px;
     }
     40% {
         color:rgb(12, 44, 149);
     }
     100% {
         color:rgb(238, 255, 0);
-        top: 370px;
+        bottom: 530px;
     }
 }
 
@@ -308,15 +308,15 @@ body {
 #explore-txt {
     font-size: 45pt;
     color:rgb(12, 44, 149);
-    position: absolute;
+    position: fixed;
     left: auto;
     right: 130px;
-    top: 600px;
-    bottom: auto;
+    top: auto;
+    bottom: 300px;
     line-height: 0%;
     animation: explore-txt-move 3s ease-in-out 7s 1 forwards running;
     transition: filter 500ms ease-in-out;
-    z-index: 8;
+    z-index: 10;
 }
 
 /* #explore-txt:hover {
@@ -329,25 +329,25 @@ body {
 @keyframes explore-txt-move {
     0% {
         color:rgb(12, 44, 149);
-        top: 600px;
+        bottom: 300px;
     }
     40% {
         color:rgb(12, 44, 149);
     }
     100% {
         color:rgb(238, 255, 0);
-        top: 250px;
+        bottom: 650px;
     }
 }
 
 #windmill-base {
     width: 150px;
     height: auto;
-    position: absolute;
+    position: fixed;
     left: auto;
     right: 100px;
     top: auto;
-    bottom: 394px;
+    bottom: 398px;
     transition: filter 500ms ease-in-out;
     z-index: 9;
 }
@@ -355,7 +355,7 @@ body {
 #windmill-wheel {
     width: 110px;
     height: auto;
-    position: absolute;
+    position: fixed;
     left: auto;
     right: 160px;
     top: auto;
