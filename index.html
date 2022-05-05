@@ -12,10 +12,17 @@
         <!-- <img src="./images/stars.png" alt="stars" id="stars"> -->
         <img src="./images/farmhouse-silhouette.png" alt="farmhouse" id="farmhouse" style="cursor: pointer">
         <img src="./images/window.png" alt="window" id="window">
-        <img src="./images/windmill-base.png" alt="windmill-base" id="windmill-base" class="windmill" style="cursor: pointer">
-        <img src="./images/windmill-wheel.png" alt="windmill-wheel" id="windmill-wheel" class="windmill" style="cursor: pointer">
+        <div id="windmill">
+            <img src="./images/windmill-base.png" alt="windmill-base" id="windmill-base" style="cursor: pointer">
+            <img src="./images/windmill-wheel.png" alt="windmill-wheel" id="windmill-wheel" style="cursor: pointer">
+        </div>
 
         <div class="sky">
+            <div class="header-txt">
+                <h3 id="welcome-txt" class="header-txt">Welcome to</h3>
+                <h1 id="evenfall-txt"class="header-txt">Glamp Evenfall</h1>
+            </div>
+       
             <div class="moon-dome">
                 <!-- geodesic dome svg-->
                 <svg id="dome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1493.52 1492.73" width="500px" height="500px" fill="currentColor" stroke="currentColor" style="cursor: pointer">
@@ -27,8 +34,7 @@
                     <polyline points="573.22 181.3 654.22 442.3 325.22 427.3 435.02 725.8 157.12 725.8 435.02 725.8 306.22 1039.3 637.22 1024.3 544.22 1289.3 637.22 1024.3 890.22 1242.3 983.22 922.3 1204.22 1092.3 983.22 922.3 1259.28 746.3 987.22 561.3 1216.22 410.3 987.22 561.3 911.22 245.3 654.22 442.3 435.02 725.8 637.22 1024.3 983.22 922.3 987.22 561.3 654.22 442.3 737.5 735.3 435.02 725.8 737.5 735.3 637.22 1024.3 737.5 735.3 983.22 922.3 737.5 735.3 987.22 561.3"/>
                 </svg>
                 <img src="./images/moon.png" alt="moon" id="moon">
-                <h3 class="textchange">Welcome to</h3>
-                <h1 class="textchange">Evenfall</h1>
+
                 <div id="door">
                     <div id="doorknob"></div>
                 </div>
@@ -37,7 +43,7 @@
         <div class="footer">
             <!-- <audio src="./audio/farm-sounds.mp3" autoplay></audio> -->
             <div>
-                <h4>Follow us!</h4>
+                <h4 id="follow-txt">Follow us!</h4>
             </div>
             <div id="social-icons">
                 <!-- instagram icon svg-->

@@ -14,7 +14,7 @@ body {
     background-image: url("./images/stars.png"), linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%);;
     background-size: 150% 150%;
     background-position: 50% 120%;
-    animation: gradient 7s ease-in-out 500ms 1 forwards running;
+    animation: gradient 7s ease-in-out 1s 1 forwards running;
 }
 
 @keyframes gradient {
@@ -26,44 +26,62 @@ body {
     }
 }
 
-h1 {
-    /* color: transparent; */
+#welcome-txt {
+    font-size: 30pt;
+    color:rgb(12, 44, 149);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 350px;
+    bottom: 0;
+    padding-top: 40px;
     line-height: 0%;
     text-align: center;
-    font-size: 86pt
+    z-index: 11;
+    pointer-events: none;
+    animation: top-text-move 7s ease-in-out 1s 1 forwards running;
 }
 
-h3 {
-    /* color: transparent; */
-    padding-top: 20px;
+#evenfall-txt {
+    font-size: 86pt;
+    color:rgb(12, 44, 149);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 430px;
+    bottom: 0;
     line-height: 0pt;
     text-align: center;
-    font-size: 30pt
+    z-index: 11;
+    pointer-events: none;
+    animation: bottom-text-move 7s ease-in-out 1s 1 forwards running;
 }
 
-h4 {
-    color: rgb(86, 86, 86);
-    padding-top: 90px;
-    position: relative;
-    top: 30px;
-    line-height: 0pt;
-    text-align: center;
-    font-size: 20pt
-}
-
-.textchange {
-    animation: textchange 7s ease-in-out 500ms 1 forwards running;
-}
-
-@keyframes textchange {
+@keyframes top-text-move {
     0% {
-        color: transparent;
+        color:rgb(12, 44, 149);
+        top: 350px;
     }
     40% {
-        color: transparent;
+        color:rgb(12, 44, 149);
     }
     100% {
-        color: rgb(0, 0, 0);
+        color:rgb(238, 255, 0);
+        top: 0;
+    }
+}
+
+@keyframes bottom-text-move {
+    0% {
+        color:rgb(12, 44, 149);
+        top: 430px;
+    }
+    40% {
+        color:rgb(12, 44, 149);
+    }
+    100% {
+        color:rgb(238, 255, 0);
+        top: 80px;
     }
 }
 
@@ -74,7 +92,7 @@ h4 {
     /* background-color: #90c0df; */
     position: fixed;
     left: 0;
-    right: -400px;
+    right: -500px;
     top: -600px;
     bottom: 0;
     margin: auto;
@@ -82,8 +100,8 @@ h4 {
     max-width: 100%;
     max-height: 100%;
     overflow: auto;
-    animation: domeset 7s ease-in-out 500ms 1 forwards running;
-    transform: scale(40%);
+    animation: domeset 7s ease-in-out 1s 1 forwards running;
+    transform: scale(30%);
     z-index: 0;
 }
 
@@ -112,7 +130,7 @@ h4 {
     left: 50px;
     opacity: 100%;
     pointer-events: none;
-    animation: moonfade 7s ease-in-out 500ms 1 forwards running;
+    animation: moonfade 7s ease-in-out 1s 1 forwards running;
 }
 
 @keyframes moonfade {
@@ -161,8 +179,15 @@ h4 {
     border-width: 3px;
     pointer-events: none;
     opacity: 0%;
-    animation: doorappear 1s ease-in-out 6s 1 forwards running;
+    transition: border 1s ease-in-out;
+    animation: doorappear 1s ease-in-out 8s 1 forwards running;
     z-index: 10;
+}
+
+.moon-dome:hover #door {
+    border: rgb(255, 242, 0);
+    border-style: solid;
+    border-width: 3px;
 }
 
 #doorknob {
@@ -178,8 +203,13 @@ h4 {
     position: relative;
     opacity: 0%;
     pointer-events: none;
-    animation: doorappear 1s ease-in-out 6s 1 forwards running;
+    transition: background-color 1s ease-in-out;
+    animation: doorappear 1s ease-in-out 8s 1 forwards running;
     z-index: 11;
+}
+
+.moon-dome:hover #doorknob {
+    background-color: rgb(255, 0, 255);
 }
 
 @keyframes doorappear {
@@ -219,17 +249,6 @@ h4 {
     drop-shadow(-3px -3px 3px rgb(255, 242, 0));
 }
 
-#windmill-base, #windmill-wheel {
-    transition: filter 1s ease-in-out;
-}
-
-.windmill:hover {
-    filter: drop-shadow(3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(3px -3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
-}
-
 #windmill-base {
     width: 150px;
     height: auto;
@@ -238,6 +257,7 @@ h4 {
     right: 100px;
     top: auto;
     bottom: 398px;
+    transition: filter 1s ease-in-out;
 }
 
 #windmill-wheel {
@@ -249,6 +269,21 @@ h4 {
     top: auto;
     bottom: 540px;
     animation: rotate 5s linear 0s infinite normal none running;
+    transition: filter 1s ease-in-out;
+}
+
+#windmill:hover #windmill-wheel {
+    filter: drop-shadow(3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(3px -3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
+}
+
+#windmill:hover #windmill-base {
+    filter: drop-shadow(3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(3px -3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
+    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
 }
 
 @keyframes rotate {
@@ -292,6 +327,16 @@ h4 {
     100% {
         opacity: 80%;
     }
+}
+
+#follow-txt {
+    color: rgb(86, 86, 86);
+    padding-top: 90px;
+    position: relative;
+    top: 30px;
+    line-height: 0pt;
+    text-align: center;
+    font-size: 20pt
 }
 
 #social-icons {
