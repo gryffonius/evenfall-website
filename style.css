@@ -112,6 +112,7 @@ h3 {
     animation: domeset 7s ease-in-out 1s 1 forwards running;
     transform: scale(30%);
     z-index: 0;
+    overflow: visible;
 }
 
 @keyframes domeset {
@@ -165,6 +166,7 @@ h3 {
     stroke: rgb(12, 44, 149);
     transition: stroke 1s ease-in-out, filter 1s ease-in-out;
     z-index: 9;
+    overflow: visible;
 }
 
 #dome:hover {
@@ -195,7 +197,7 @@ h3 {
     z-index: 10;
 }
 
-.moon-dome:hover #door {
+#dome:hover ~ #door {
     border: rgb(255, 242, 0);
     border-style: solid;
     border-width: 3px;
@@ -207,7 +209,7 @@ h3 {
     border-radius: 100%;
     left: 35px;
     right: 0;
-    top: 90px;
+    top: 320px;
     bottom: 0;
     margin: auto;
     background-color: purple;
@@ -219,7 +221,7 @@ h3 {
     z-index: 11;
 }
 
-.moon-dome:hover #doorknob {
+#dome:hover ~ #doorknob {
     background-color: rgb(255, 0, 255);
 }
 
@@ -271,7 +273,7 @@ h2 {
     z-index: 12;
 }
 
-h2#construction-txt {
+#construction-txt {
     font-size: 30pt;
     color:rgb(12, 44, 149);
     position: absolute;
@@ -294,7 +296,7 @@ h2#construction-txt {
     border-color: rgb(255, 242, 0);
 }
 
-.moon-dome:hover #book-now-txt, h2#construction-txt {
+.moon-dome:hover #book-now-txt, #construction-txt {
     color:rgb(255, 242, 0);
 }
 
@@ -494,8 +496,8 @@ h2#construction-txt {
 
 .back-button {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 55px;
+    left: 55px;
     width: 150px;
     height: 73px;
     border-style: solid;
@@ -506,7 +508,7 @@ h2#construction-txt {
 }
 
 .back-button:hover {
-    transform: scale(103%);
+    transform: scale(110%);
     background-color: rgb(12, 44, 149);
 }
 
@@ -570,6 +572,7 @@ footer {
 
 footer.homepage-footer {
     height: 400px;
+    overflow: hidden;
 }
 
 h4 {
