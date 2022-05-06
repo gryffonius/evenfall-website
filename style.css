@@ -1,3 +1,25 @@
+/* ORIGINAL COLORS
+--highlight-color: rgb(255, 242, 0);
+--dark-color: rgb(3, 23, 89);
+--dark-highlight: rgb(12, 44, 149);
+--doorknob-dark: purple;
+--doorknob-light: rgb(255, 0, 255);
+--footer-dark: rgb(25, 25, 25);
+--footer-light: rgb(86, 86, 86);
+--sky-gradient: linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%);
+*/
+
+:root {
+    --highlight-color: rgb(255, 119, 0);
+    --dark-color: rgb(52, 3, 89);
+    --dark-highlight: rgb(179, 13, 225);
+    --doorknob-dark: rgb(114, 12, 12);
+    --doorknob-light: rgb(255, 0, 0);
+    --footer-dark: rgb(25, 25, 25);
+    --footer-light: rgb(86, 86, 86);
+    --sky-gradient: linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +38,7 @@ html {
 
 body {
     /* background: linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%); */
-    background-image: url("../images/stars.png"), linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%);;
+    background-image: url("../images/stars.png"), var(--sky-gradient);
     background-size: 150% 150%;
     background-position: 50% 10%;
 }
@@ -43,7 +65,7 @@ body.homepage-body {
 
 .header-txt {
     position: fixed;
-    top: 150px;
+    top: 180px;
     width: 100%;
     height: auto;
     animation: title-text-move 7s ease-in-out 1s 1 forwards running;
@@ -52,15 +74,15 @@ body.homepage-body {
 
 @keyframes title-text-move {
     0% {
-        color:rgb(12, 44, 149);
-        top: 150px;
+        color: var(--footer-dark);
+        top: 180px;
         transform: scale(110%);
     }
     40% {
-        color:rgb(12, 44, 149);
+        color: var(--dark-highlight);
     }
     100% {
-        color:rgb(255, 242, 0);
+        color: var(--highlight-color);
         top: 30px;
         transform: scale(100%);
     }
@@ -68,7 +90,7 @@ body.homepage-body {
 
 h1 {
     font-size: 86pt;
-    color:rgb(255, 242, 0);
+    color: var(--highlight-color);
     margin-top: 20px;
     text-align: center;
     z-index: 15;
@@ -77,13 +99,13 @@ h1 {
 
 #evenfall-txt {
     position: fixed;
-    color:rgb(12, 44, 149);
+    color: var(--footer-dark);
 }
 
 
 h3 {
     font-size: 30pt;
-    color:rgb(255, 242, 0);
+    color: var(--highlight-color);
     text-align: center;
     z-index: 15;
     pointer-events: none;
@@ -91,7 +113,7 @@ h3 {
 
 #welcome-txt {
     position: fixed;
-    color:rgb(12, 44, 149);
+    color: var(--footer-dark);
 }
 
 .moon-dome {
@@ -161,20 +183,20 @@ h3 {
     position: absolute;
     top: 50px;
     left: 50px;
-    fill: rgb(3, 23, 89);
+    fill: var(--dark-color);
     stroke-width: 5px;
-    stroke: rgb(12, 44, 149);
+    stroke: var(--dark-highlight);
     transition: stroke 1s ease-in-out, filter 1s ease-in-out;
     z-index: 9;
     overflow: visible;
 }
 
 #dome:hover {
-    stroke:rgb(255, 242, 0);
-    filter: drop-shadow(3px 3px 10px rgb(255, 242, 0))
-    drop-shadow(3px -3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
+    stroke: var(--highlight-color);
+    filter: drop-shadow(3px 3px 10px var(--highlight-color))
+    drop-shadow(3px -3px 3px var(--highlight-color))
+    drop-shadow(-3px 3px 3px var(--highlight-color))
+    drop-shadow(-3px -3px 3px var(--highlight-color));
 }
 
 #door {
@@ -186,8 +208,8 @@ h3 {
     top: 120px;
     bottom: 0;
     margin: auto;
-    background-color: rgb(6, 6, 103);
-    border: rgb(12, 44, 149);
+    background-color: var(--dark-color);
+    border: var(--dark-highlight);
     border-style: solid;
     border-width: 3px;
     pointer-events: none;
@@ -198,7 +220,7 @@ h3 {
 }
 
 #dome:hover ~ #door {
-    border: rgb(255, 242, 0);
+    border: var(--highlight-color);
     border-style: solid;
     border-width: 3px;
 }
@@ -212,7 +234,7 @@ h3 {
     top: 320px;
     bottom: 0;
     margin: auto;
-    background-color: purple;
+    background-color: var(--doorknob-dark);
     position: relative;
     opacity: 0%;
     pointer-events: none;
@@ -222,7 +244,7 @@ h3 {
 }
 
 #dome:hover ~ #doorknob {
-    background-color: rgb(255, 0, 255);
+    background-color: var(--doorknob-light);
 }
 
 @keyframes doorappear {
@@ -245,7 +267,7 @@ h3 {
     height: 100px;
     border-style: solid;
     border-width: 5px;
-    border-color: rgb(12, 44, 149);
+    border-color: var(--dark-highlight);
     border-radius: 20px;
     background-color: rgb(6, 6, 103);
     transition: top 1s ease-in-out, opacity 1s ease-in-out;
@@ -258,11 +280,11 @@ h3 {
 h2 {
     font-size: 45pt;
     text-align: center;
-    color:rgb(255, 242, 0);
+    color: var(--highlight-color);
 }
 
 #book-now-txt {
-    color:rgb(12, 44, 149);
+    color: var(--dark-highlight);
     position: absolute;
     left: 0;
     right: 0;
@@ -275,7 +297,7 @@ h2 {
 
 #construction-txt {
     font-size: 30pt;
-    color:rgb(12, 44, 149);
+    color: var(--dark-highlight);
     position: absolute;
     left: 0;
     right: 0;
@@ -293,11 +315,11 @@ h2 {
     /* top: 120px; */
     top: 100px;
     opacity: 1;
-    border-color: rgb(255, 242, 0);
+    border-color: var(--highlight-color);
 }
 
 .moon-dome:hover #book-now-txt, #construction-txt {
-    color:rgb(255, 242, 0);
+    color: var(--highlight-color);
 }
 
 /* FARMHOUSE / ABOUT US ELEMENTS */
@@ -336,7 +358,7 @@ h2 {
 }
 
 #about-us-txt {
-    color:rgb(12, 44, 149);
+    color: var(--dark-highlight);
     position: fixed;
     left: 130px;
     right: auto;
@@ -350,41 +372,41 @@ h2 {
 
 @keyframes about-txt-move {
     0% {
-        color:rgb(12, 44, 149);
+        color: var(--dark-highlight);
         bottom: 300px;
     }
     40% {
-        color:rgb(12, 44, 149);
+        color: var(--dark-highlight);
     }
     100% {
-        color:rgb(255, 242, 0);
+        color: var(--highlight-color);
         bottom: 580px;
     }
 }
 
 #about-us-txt:hover {
-    filter: drop-shadow(3px 3px 10px rgb(12, 44, 149))
-    drop-shadow(3px -3px 10px rgb(12, 44, 149))
-    drop-shadow(-3px 3px 10px rgb(12, 44, 149))
-    drop-shadow(-3px -3px 10px rgb(12, 44, 149));
+    filter: drop-shadow(3px 3px 10px var(--dark-highlight))
+    drop-shadow(3px -3px 10px var(--dark-highlight))
+    drop-shadow(-3px 3px 10px var(--dark-highlight))
+    drop-shadow(-3px -3px 10px var(--dark-highlight));
 }
 
 .about-us:hover #about-us-txt {
-    filter: drop-shadow(3px 3px 10px rgb(12, 44, 149))
-    drop-shadow(3px -3px 10px rgb(12, 44, 149))
-    drop-shadow(-3px 3px 10px rgb(12, 44, 149))
-    drop-shadow(-3px -3px 10px rgb(12, 44, 149));
+    filter: drop-shadow(3px 3px 10px var(--dark-highlight))
+    drop-shadow(3px -3px 10px var(--dark-highlight))
+    drop-shadow(-3px 3px 10px var(--dark-highlight))
+    drop-shadow(-3px -3px 10px var(--dark-highlight));
 }
 
 .about-us:hover #farmhouse {
-    filter: drop-shadow(3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(3px -3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
+    filter: drop-shadow(3px 3px 3px var(--highlight-color))
+    drop-shadow(3px -3px 3px var(--highlight-color))
+    drop-shadow(-3px 3px 3px var(--highlight-color))
+    drop-shadow(-3px -3px 3px var(--highlight-color));
 }
 
 #explore-txt {
-    color:rgb(12, 44, 149);
+    color: var(--dark-highlight);
     position: fixed;
     left: auto;
     right: 130px;
@@ -405,14 +427,14 @@ h2 {
 
 @keyframes explore-txt-move {
     0% {
-        color:rgb(12, 44, 149);
+        color: var(--dark-highlight);
         bottom: 300px;
     }
     40% {
-        color:rgb(12, 44, 149);
+        color: var(--dark-highlight);
     }
     100% {
-        color:rgb(255, 242, 0);
+        color: var(--highlight-color);
         bottom: 700px;
     }
 }
@@ -442,24 +464,24 @@ h2 {
     z-index: 9;
 }
 .explore:hover #explore-txt {
-    filter: drop-shadow(3px 3px 10px rgb(12, 44, 149))
-    drop-shadow(3px -3px 10px rgb(12, 44, 149))
-    drop-shadow(-3px 3px 10px rgb(12, 44, 149))
-    drop-shadow(-3px -3px 10px rgb(12, 44, 149));
+    filter: drop-shadow(3px 3px 10px var(--dark-highlight))
+    drop-shadow(3px -3px 10px var(--dark-highlight))
+    drop-shadow(-3px 3px 10px var(--dark-highlight))
+    drop-shadow(-3px -3px 10px var(--dark-highlight));
 }
 
 .explore:hover #windmill-wheel {
-    filter: drop-shadow(3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(3px -3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
+    filter: drop-shadow(3px 3px 3px var(--highlight-color))
+    drop-shadow(3px -3px 3px var(--highlight-color))
+    drop-shadow(-3px 3px 3px var(--highlight-color))
+    drop-shadow(-3px -3px 3px var(--highlight-color));
 }
 
 .explore:hover #windmill-base {
-    filter: drop-shadow(3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(3px -3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px 3px 3px rgb(255, 242, 0))
-    drop-shadow(-3px -3px 3px rgb(255, 242, 0));
+    filter: drop-shadow(3px 3px 3px var(--highlight-color))
+    drop-shadow(3px -3px 3px var(--highlight-color))
+    drop-shadow(-3px 3px 3px var(--highlight-color))
+    drop-shadow(-3px -3px 3px var(--highlight-color));
 }
 
 @keyframes rotate {
@@ -502,14 +524,14 @@ h2 {
     height: 73px;
     border-style: solid;
     border-width: 5px;
-    border-color: rgb(255, 242, 0);
+    border-color: var(--highlight-color);
     border-radius: 20px;
     transition: transform 500ms ease-in-out, background-color 500ms ease-in-out;
 }
 
 .back-button:hover {
     transform: scale(110%);
-    background-color: rgb(12, 44, 149);
+    background-color: var(--dark-highlight);
 }
 
 #back-txt {
@@ -544,13 +566,13 @@ h2 {
     width: 100%;
     border-style: solid;
     border-width: 5px;
-    border-color: rgb(255, 242, 0);
+    border-color: var(--highlight-color);
     background-color: transparent;
     transition: background-color 500ms ease-in-out;
 }
 
 .people:hover .people-pics {
-    background-color: rgb(12, 44, 149);
+    background-color: var(--dark-highlight);
 }
 
 /* FOOTER */
@@ -578,7 +600,7 @@ footer.homepage-footer {
 h4 {
     font-size: 20pt;
     text-align: center;
-    color:rgb(255, 242, 0);
+    color: var(--highlight-color);
 }
 
 #follow-txt {
@@ -608,5 +630,5 @@ h4 {
 }
 
 .icon:hover {
-    fill: rgb(255, 242, 0);
+    fill: var(--highlight-color);
 }
