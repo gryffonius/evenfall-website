@@ -1,111 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
+}
+
 html {
     /* background-color: black; */
     width: 100%;
     height: 100%;
-    margin: none;
-    padding: none;
     font-family: Oleo Script;
 }
 
-body.home {
-    width: 100%;
-    height: 100%;
-    /* background: linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%); */
-    background-image: url("../images/stars.png"), linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%);;
-    background-size: 150% 150%;
-    background-position: 50% 120%;
-    animation: gradient 7s ease-in-out 1s 1 forwards running;
-}
-
 body {
-    width: 100%;
-    height: 100%;
     /* background: linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%); */
     background-image: url("../images/stars.png"), linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%);;
     background-size: 150% 150%;
     background-position: 50% 10%;
 }
 
+body.homepage-body {
+    /* background: linear-gradient(0deg, rgba(255,116,6,1) 0%, rgba(209,2,46,1) 25%, #b806c2 50%, #52068a 75%, #042255 100%); */
+    background-position: 50% 90%;
+    animation: gradient 7s ease-in-out 1s 1 forwards running;
+    margin-bottom: -400px;
+}
+
 @keyframes gradient {
     0% {
-        background-position: 50% 120%
+        background-position: 50% 90%
     }
     100% {
         background-position: 50% 10%
     }
 }
 
+.sky-containter {
+    height: 100%;
+}
+
+.header-txt {
+    position: fixed;
+    top: 150px;
+    width: 100%;
+    height: auto;
+    animation: title-text-move 7s ease-in-out 1s 1 forwards running;
+    transform: scale(110%);
+}
+
+@keyframes title-text-move {
+    0% {
+        color:rgb(12, 44, 149);
+        top: 150px;
+        transform: scale(110%);
+    }
+    40% {
+        color:rgb(12, 44, 149);
+    }
+    100% {
+        color:rgb(255, 242, 0);
+        top: 30px;
+        transform: scale(100%);
+    }
+}
+
 h1 {
     font-size: 86pt;
     color:rgb(255, 242, 0);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 80px;
-    bottom: 0;
-    line-height: 0pt;
+    margin-top: 20px;
     text-align: center;
     z-index: 15;
     pointer-events: none;
 }
 
-h3#welcome-txt {
+#evenfall-txt {
+    position: fixed;
+    color:rgb(12, 44, 149);
+}
+
+
+h3 {
     font-size: 30pt;
-    color:rgb(12, 44, 149);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 350px;
-    bottom: 0;
-    padding-top: 40px;
-    line-height: 0%;
+    color:rgb(255, 242, 0);
     text-align: center;
     z-index: 15;
     pointer-events: none;
-    animation: top-text-move 7s ease-in-out 1s 1 forwards running;
 }
 
-h1#evenfall-txt {
-    font-size: 86pt;
+#welcome-txt {
+    position: fixed;
     color:rgb(12, 44, 149);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 430px;
-    bottom: 0;
-    line-height: 0pt;
-    text-align: center;
-    z-index: 15;
-    pointer-events: none;
-    animation: bottom-text-move 7s ease-in-out 1s 1 forwards running;
-}
-
-@keyframes top-text-move {
-    0% {
-        color:rgb(12, 44, 149);
-        top: 350px;
-    }
-    40% {
-        color:rgb(12, 44, 149);
-    }
-    100% {
-        color:rgb(255, 242, 0);
-        top: 0;
-    }
-}
-
-@keyframes bottom-text-move {
-    0% {
-        color:rgb(12, 44, 149);
-        top: 430px;
-    }
-    40% {
-        color:rgb(12, 44, 149);
-    }
-    100% {
-        color:rgb(255, 242, 0);
-        top: 80px;
-    }
 }
 
 .moon-dome {
@@ -115,9 +101,9 @@ h1#evenfall-txt {
     /* background-color: #90c0df; */
     position: fixed;
     left: 0;
-    right: -500px;
-    top: -600px;
-    bottom: 0;
+    right: 0;
+    top: 0;
+    bottom: -400px;
     margin: auto;
     /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
     max-width: 100%;
@@ -130,8 +116,8 @@ h1#evenfall-txt {
 
 @keyframes domeset {
     0% {
-        right: -500px;
-        top: -600px;
+        right: 0;
+        bottom: -400px;
         transform: scale(30%);
         /* background-color: #90c0df; */
     }
@@ -139,8 +125,8 @@ h1#evenfall-txt {
         /* background-color: #90c0df; */
     }
     100% {
-        right: 0px;
-        top: 0;
+        right: 0;
+        bottom: 0;
         transform: scale(100%);
         /* background-color: rgb(255, 255, 255); */
     }
@@ -267,9 +253,13 @@ h1#evenfall-txt {
     transform: scale(80%);
 }
 
-h2#book-now-txt {
+h2 {
     font-size: 45pt;
     text-align: center;
+    color:rgb(255, 242, 0);
+}
+
+#book-now-txt {
     color:rgb(12, 44, 149);
     position: absolute;
     left: 0;
@@ -283,7 +273,6 @@ h2#book-now-txt {
 
 h2#construction-txt {
     font-size: 30pt;
-    text-align: center;
     color:rgb(12, 44, 149);
     position: absolute;
     left: 0;
@@ -305,7 +294,7 @@ h2#construction-txt {
     border-color: rgb(255, 242, 0);
 }
 
-.moon-dome:hover #book-now-txt, #construction-txt {
+.moon-dome:hover #book-now-txt, h2#construction-txt {
     color:rgb(255, 242, 0);
 }
 
@@ -344,8 +333,7 @@ h2#construction-txt {
     z-index: 9;
 }
 
-h2#about-us-txt {
-    font-size: 45pt;
+#about-us-txt {
     color:rgb(12, 44, 149);
     position: fixed;
     left: 130px;
@@ -368,11 +356,11 @@ h2#about-us-txt {
     }
     100% {
         color:rgb(255, 242, 0);
-        bottom: 530px;
+        bottom: 580px;
     }
 }
 
-h2#about-us-txt:hover {
+#about-us-txt:hover {
     filter: drop-shadow(3px 3px 10px rgb(12, 44, 149))
     drop-shadow(3px -3px 10px rgb(12, 44, 149))
     drop-shadow(-3px 3px 10px rgb(12, 44, 149))
@@ -393,8 +381,7 @@ h2#about-us-txt:hover {
     drop-shadow(-3px -3px 3px rgb(255, 242, 0));
 }
 
-h2#explore-txt {
-    font-size: 45pt;
+#explore-txt {
     color:rgb(12, 44, 149);
     position: fixed;
     left: auto;
@@ -423,8 +410,8 @@ h2#explore-txt {
         color:rgb(12, 44, 149);
     }
     100% {
-        color:rgb(238, 255, 0);
-        bottom: 650px;
+        color:rgb(255, 242, 0);
+        bottom: 700px;
     }
 }
 
@@ -503,44 +490,116 @@ h2#explore-txt {
     }
 }
 
+/* ABOUT US PAGE */
+
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 150px;
+    height: 73px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(255, 242, 0);
+    border-radius: 20px;
+    transition: transform 500ms ease-in-out, background-color 500ms ease-in-out;
+}
+
+.back-button:hover {
+    transform: scale(103%);
+    background-color: rgb(12, 44, 149);
+}
+
+#back-txt {
+    position: relative;
+    top: 5px;
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+.sky-container {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.people {
+    width: 400px;
+    margin: 20px;
+    transition: transform 500ms ease-in-out;
+}
+
+.people:hover {
+    transform: scale(103%);
+}
+
+.people-pics {
+    width: 100%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(255, 242, 0);
+    background-color: transparent;
+    transition: background-color 500ms ease-in-out;
+}
+
+.people:hover .people-pics {
+    background-color: rgb(12, 44, 149);
+}
 
 /* FOOTER */
 
-.footer {
-    position: fixed;
+footer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 400px;
-    background-color: rgb(0, 0, 0);
+    height: 200px;
+    background-color: rgb(25, 25, 25);
     z-index: 10;
-    margin-top: auto;
 }
 
-h4#follow-txt {
+footer.homepage-footer {
+    height: 400px;
+}
+
+h4 {
+    font-size: 20pt;
+    text-align: center;
+    color:rgb(255, 242, 0);
+}
+
+#follow-txt {
     color: rgb(86, 86, 86);
-    padding-top: 90px;
-    position: relative;
-    top: 30px;
-    line-height: 0pt;
+    margin-top: 0;
+    margin-bottom: 0;
     text-align: center;
     font-size: 20pt;
     z-index: 11;
 }
 
-#social-icons {
+.social-icons {
     display: flex;
     flex-direction: row;
-    column-gap: 50px;
+    height: 100px;
+    column-gap: 30px;
     flex-wrap: nowrap;
     justify-content: center;
-    z-index: 10;
-    transform: scale(60%);
     position: relative;
     z-index: 11;
 }
 
 .icon {
+    height: 100%;
     fill: rgb(86, 86, 86);
     transition: fill 500ms ease-in-out;
 }
